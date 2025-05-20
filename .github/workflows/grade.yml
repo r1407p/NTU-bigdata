@@ -2,8 +2,6 @@ name: Evaluate Submission
 
 on:
   push:
-    paths:
-      - 'public_submission.csv'
 
 jobs:
   evaluate:
