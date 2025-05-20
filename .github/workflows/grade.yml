@@ -3,8 +3,6 @@ name: Grade Submission
 on:
   push:
     paths:
-      - 'public_submission.csv'
-  workflow_dispatch:
 
 jobs:
   grade:
