@@ -1,0 +1,19 @@
+name: Evaluate Submission
+
+on:
+  push:
+    paths:
+      - 'public_submission.csv'
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Python dependencies
+        run: pip install pandas numpy scikit-learn
+
+      - name: Run evaluation script
+        run: python eval.py
