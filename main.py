@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import MiniBatchKMeans
+from sklearn.cluster import MiniBatchKMeans, KMeans
 
 
 class Clusterer(object):
@@ -24,6 +24,7 @@ class Clusterer(object):
 
     def cluster_data(self):
         kmeans_model = MiniBatchKMeans(n_clusters=self.k, n_init=100, batch_size=1000, random_state=42)
+        # kmeans_model = KMeans(n_clusters=self.k, n_init=100, random_state=42)
 
         normalized_X = self.normalize_data(self.X)  
         labels = kmeans_model.fit_predict(normalized_X)
